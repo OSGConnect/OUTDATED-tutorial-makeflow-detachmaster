@@ -1,16 +1,16 @@
 
-[title]: - "makeflow - Detach master from the terminal"
+[title]: - "Makeflow - Detach master from the terminal"
 [TOC]
  
 ## Overview
 
-It is okay to run makeflow on the terminal when jobs complete in few minutues.  What if you want to run many jobs 
+It is okay to run Makeflow on the terminal when jobs complete in few minutes.  What if you want to run many jobs 
 that may run for several days and weeks. If you log out from the submit node, the master process will be killed. 
 Since the master process keeps track of the workers that are distributed on OSG machines, you need to re-submit 
-makeflow. 
+Makeflow. 
 
-It is a good idea to run makeflow in the detached mode. There are several ways to detach the master process from the 
-terminal, such as nohup, SCREEN, tmux, and condor local job. 
+It is a good idea to run Makeflow in the detached mode. There are several ways to detach the master process from the 
+terminal, such as `nohup`, `SCREEN`, `tmux`, and `condor job as `local universe`.
 
 In this tutorial, we learn how to keep the master process alive with condor local job even after closing the terminal. 
 
@@ -24,13 +24,13 @@ For this tutorial, we use the workflow of generating Fibonacci sequence that was
 This will create a directory `tutorial-makeflow-detachmaster`. Inside the directory, you will see the following files
 
      fibonacci.bash                 # A simple bash script that generates the Fibonacci sequence
-     fibonacci.makeflow             # The makeflow file
-     local_condor_makeflow.submit  # HTcondor file to detach the master process from the terminal
+     fibonacci.makeflow             # The Makeflow file
+     local_condor_makeflow.submit   # HTcondor file to detach the master process from the terminal
 
 The file `fibonacci.bash` is the job script, the file `fibonacci.makeflow` describes the make rules, and the
 file `local_condor_makeflow.submit` is the HTCondor description that runs the master process as local condor job.
 
-We focus on how to run the master process as a local condor jobs. Check the "makeflow-quickstart"[ref] for the details of makeflow. 
+We focus on how to run the master process as a local condor jobs. Check the "makeflow-quickstart"[ref] for the details of Makeflow. 
 
 ## Run master process as a local condor job. 
 
@@ -62,7 +62,7 @@ Check the job status
     19150584.0   dbala           4/1  11:54   0+00:00:40 I  0   0.0  condor.sh fibonacci.bash 20 > fib.20.out
     19150585.0   dbala           4/1  11:54   0+00:00:20 I  0   0.0  condor.sh fibonacci.bash 10 > fib.10.out
 
-The above output shows that the master is running and the two workers are waiting in the queue. The makeflow execution is a 
+The above output shows that the master is running and the two workers are waiting in the queue. The Makeflow execution is a 
 local condor job so it starts quickly. The two workers that run Rules 1 and 2 are distributed on OSG machines and they are waiting for resources. The jobs would complete in few minutes. 
 
 ## Summary
