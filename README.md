@@ -23,9 +23,9 @@ For this tutorial, we use the workflow of generating Fibonacci sequence that was
 
 This will create a directory `tutorial-makeflow-detachmaster`. Inside the directory, you will see the following files
 
-     fibonacci.bash                 # A simple bash script that generates the Fibonacci sequence
-     fibonacci.makeflow             # The Makeflow file
-     local_condor_makeflow.submit   # HTcondor file to detach the master process from the terminal
+    fibonacci.bash                 # A simple bash script that generates the Fibonacci sequence
+    fibonacci.makeflow             # The Makeflow file
+    local_condor_makeflow.submit   # HTcondor file to detach the master process from the terminal
 
 The file `fibonacci.bash` is the job script, the file `fibonacci.makeflow` describes the make rules, and the
 file `local_condor_makeflow.submit` is the HTCondor description that runs the master process as local condor job.
@@ -36,11 +36,11 @@ We focus on how to run the master process as a local condor jobs. Check the "mak
 
 Let us take a look at the file `local_condor_makeflow.submit`
 
-      $ cat local_condor_makeflow.submit 
-      universe = local                        
-      executable = /usr/bin/makeflow
-      arguments = -T condor fibonacci.makeflow
-      queue 
+    $ cat local_condor_makeflow.submit 
+    universe = local                        
+    executable = /usr/bin/makeflow
+    arguments = -T condor fibonacci.makeflow
+    queue 
 
 This is the HTcondor job description file written in just four lines. The first line says that the job universe is local and the job would
 run on the submit node. The executable for the job is `/usr/bin/makeflow` with an argument `-T condor fibonacci.makeflow`. The keyword `queue` is the start button 
@@ -67,8 +67,8 @@ local condor job so it starts quickly. The two workers that run Rules 1 and 2 ar
 
 ## Summary
 
-      There are several ways to detach the master process from the terminal, such as nohup, SCREEN, tmux, and condor local job. 
-      We recommend running the master as a local condor job on the submit node. 
+    There are several ways to detach the master process from the terminal, such as nohup, SCREEN, tmux, and condor local job. 
+    We recommend running the master as a local condor job on the submit node. 
 
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
