@@ -10,7 +10,7 @@ Since the master process keeps track of the workers that are distributed on OSG 
 Makeflow. 
 
 It is a good idea to run Makeflow in the detached mode. There are several ways to detach the master process from the 
-terminal, such as `nohup`, `SCREEN`, `tmux`, and `condor job as `local universe`.
+terminal, such as `nohup`, `SCREEN`, `tmux`, and condor job as `local universe`.
 
 In this tutorial, we learn how to keep the master process alive with condor local job even after closing the terminal. 
 
