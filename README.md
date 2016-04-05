@@ -19,7 +19,7 @@ In this tutorial, we learn how to keep the master process alive with condor loca
 For this tutorial, we use the workflow of generating Fibonacci sequence that was used in the previous tutorial 
 "makeflow-quickstart"[ref]. In the command prompt, type
 
-         $ tutorial makeflow-detachmaster # Copies input and script files to the directory tutorial-makeflow-detachmaster
+     $ tutorial makeflow-detachmaster # Copies input and script files to the directory tutorial-makeflow-detachmaster
 
 This will create a directory `tutorial-makeflow-detachmaster`. Inside the directory, you will see the following files
 
