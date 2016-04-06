@@ -37,12 +37,15 @@ We focus on how to run the master process as a local condor jobs. Check the "mak
 Let us take a look at the file `local_condor_makeflow.submit`
 
     $ cat local_condor_makeflow.submit 
-    universe = local                        
+    universe = local
+    getenv = true
     executable = /usr/bin/makeflow
     arguments = -T condor fibonacci.makeflow
-    queue 
+    log = local_condor.log
+    queue
 
-This is the HTcondor job description file written in just four lines. The first line says that the job universe is local and the job would
+
+This is the HTcondor job description file.  The first line says that the job universe is local and the job would
 run on the submit node. The executable for the job is `/usr/bin/makeflow` with an argument `-T condor fibonacci.makeflow`. The keyword `queue` is the start button 
 that submits the above three lines to the HTCondor batch system. 
 
