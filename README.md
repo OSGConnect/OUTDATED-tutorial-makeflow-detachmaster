@@ -1,11 +1,8 @@
 
-[title]: - "Makeflow - Detach master from the terminal"
+[title]: - "Makeflow - Quickstart"
 [TOC]
  
 ## Overview
 
-It is okay to run Makeflow on the terminal when jobs complete in few minutes.  What if you want to run many jobs 
-that may run for several days and weeks. If you log out from the submit node, the master process will be killed. 
-Since the master process keeps track of the workers that are distributed on OSG machines, you need to re-submit 
-Makeflow. 
-
+[Makeflow](http://ccl.cse.nd.edu/software/makeflow/) is a workflow engine that handles large number 
+of jobs. The following are characteristics of Makeflow.
