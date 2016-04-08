@@ -74,4 +74,5 @@ local condor job so it starts quickly. The two workers that run Rules 1 and 2 ar
     We recommend running the master as a local condor job on the submit node. 
 
 ## Getting Help
+For technical questions about Makeflow,  contact [Cooperative Computing Lab (cclab)](http://ccl.cse.nd.edu/software/help/).
 For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
